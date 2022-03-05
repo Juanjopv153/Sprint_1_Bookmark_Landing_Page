@@ -179,14 +179,16 @@ main {
 
 .seccionDos .seccionDosHeader {
     display: flex;
-    width: auto;
-    margin: 0px auto 5% auto;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px auto 6% auto;
     justify-content: center;
 }
 
-.seccionDosHeader span {
+.seccionDosHeader div span {
     border-bottom: 1px black solid;
     padding: 20px;
+    cursor: pointer;
 }
 
 .seccionDosBody {
@@ -197,6 +199,7 @@ main {
     width: 100%;
     border-radius: 0px 80px 80px 0px;
     top: 30%;
+    right: 15%;
 }
 
 .seccionDosIzquierda {
@@ -242,7 +245,6 @@ main {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    padding: 5% 0px 5% 0px;
     height: 500px;
 }
 
@@ -380,6 +382,7 @@ footer .seccionFooterDos {
     .seccionUnoIzquierda, .seccionUnoDerecha, .seccionDosDerecha, .seccionDosIzquierda {
         margin: 0;
         width: 100%;
+        margin-bottom: 5%;
     }
 
     .seccionUnoIzquierda p, h1, .seccionUnoIzBotones {
@@ -413,21 +416,96 @@ footer .seccionFooterDos {
 
     .minisecciones {
         width: 100%;
+        text-align: center;
     }
-    
+
     .seccionDosIzquierda img {
         width: 60%;
         justify-self: center;
         margin: auto;
     }
-    .gradientseccioDos{
-        width: 50%;
-        left: 50%;
+
+    .gradientseccioDos {
+        width: 75%;
+        height: 85%;
+        left: 0;
     }
+
+    .seccionDos .seccionDosHeader {
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 5%;
+    }
+
+    .seccionDosHeader div {
+        text-align: center;
+        width: 100%;
+        margin: 0px;
+        border-bottom: 1px black solid;
+    }
+
+    .seccionDosHeader div span {
+        border-bottom: none;
+        text-align: center;
+        width: 100%;
+        padding: 0px;
+
+    }
+
     .seccionDosBody {
+        flex-direction: column;
+        margin: 0;
+        height: 100%;
+    }
+
+    .seccionExtensiones {
+        flex-direction: column;
+        height: auto;
+        margin-bottom: 5%;
+    }
+
+    .seccionExtensiones .card{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 50%;
+    }
+
+    .seccionExtensiones .cardChrome {
+        align-self: center;
+    }
+
+    .seccionExtensiones .cardFirefox {
+        align-self: center;
+    }
+
+    .seccionExtensiones .cardOpera {
+        align-self: center;
+    }
+
+    .seccionPreguntas .preguntas {
+        width: 80%;
+    }
+    .seccionPreguntas hr{
+        width: 80%;
+    }
+ 
+    footer .seccionFooterDos{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .seccionFooterDos .seccionFooterDosUno{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .seccionFooterUno div{
         flex-direction: column;
     }
 }
+
 
 @media screen and (max-width:500px) {
     header .headerContent {

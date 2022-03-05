@@ -11,14 +11,17 @@
 /* variables */
 :root {
     --primaryColorBlue: hsl(231, 69%, 60%);
-    --primartColorRed: hsl(0, 94%, 66%);
+    --primaryColorRed: hsl(0, 94%, 66%);
     --NeutralGrayBlue: hsl(229, 8%, 60%);
     --NeutralDarkBlue: hsl(229, 31%, 21%);
 }
 
 /* Estilos predeterminados para ponerle a ese tipo de objeto */
+.logo {
+    width: 160px;
+}
 
-.seccion{
+.seccion {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -34,6 +37,7 @@
     font-weight: bold;
     transition: all 0.5s;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 
@@ -47,7 +51,7 @@
     text-align: center;
 }
 
-.gradient{
+.gradient {
     height: 220px;
     position: absolute;
     background-color: var(--primaryColorBlue);
@@ -63,8 +67,9 @@ header {
 
 }
 
-header img {
-    width: 160px;
+.hamburger img {
+    width: 30px;
+    display: none;
 }
 
 header .headerContent {
@@ -76,7 +81,7 @@ header .headerContent {
 }
 
 .headerContent button {
-    background-color: var(--primartColorRed);
+    background-color: var(--primaryColorRed);
     color: white;
     border-radius: 5px;
     box-shadow: 5px 5px 5px gray;
@@ -91,13 +96,12 @@ header .headerContent {
 
 .headerContent button:active {
     background-color: hsl(0, 49%, 47%);
-    color: white;
     box-shadow: 2px 2px 5px gray;
 }
 
-
+/* Estilos de main */
 main {
-    margin-top: 5%;
+    margin: 5% 0px 8% 0px;
 }
 
 .seccionUnoIzquierda {
@@ -131,17 +135,18 @@ main {
 
 }
 
-.seccionUnoDerecha img {
-    width: 400px;
-    align-self: flex-start;
-    z-index: 20;
-}
-
 .seccionUnoDerecha {
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
-    width:50%;
+    width: 50%;
+}
+
+.seccionUnoDerecha img {
+    width: 400px;
+    align-items: center;
+    z-index: 20;
 }
 
 .seccionUnoIzBotones .botonChrome {
@@ -184,17 +189,17 @@ main {
     padding: 20px;
 }
 
-.seccionDosBody{
+.seccionDosBody {
     display: flex;
 }
 
-.gradientseccioDos{
+.gradientseccioDos {
     width: 100%;
     border-radius: 0px 80px 80px 0px;
     top: 30%;
 }
 
-.seccionDosIzquierda{
+.seccionDosIzquierda {
     position: relative;
     display: flex;
     flex-flow: column nowrap;
@@ -204,8 +209,8 @@ main {
     gap: 10px;
     width: 50%;
 }
-    
-.seccionDosIzquierda img{
+
+.seccionDosIzquierda img {
     width: 350px;
     align-items: end;
     z-index: 20;
@@ -231,17 +236,147 @@ main {
     align-self: flex-start;
 }
 
+.seccionExtensiones {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 5% 0px 5% 0px;
+    height: 500px;
+}
 
+.seccionExtensiones .card {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 5% 2% 2% 2%;
+    width: 25%;
+    box-shadow: -8px 8px 8px var(--NeutralGrayBlue);
+}
 
+.dotsImage {
+    width: 100%;
+}
 
+.seccionExtensiones .cardChrome {
+    align-self: flex-start;
+}
 
+.seccionExtensiones .cardFirefox {
+    align-self: center;
+}
 
+.seccionExtensiones .cardOpera {
+    align-self: flex-end;
+}
+
+.btnExtension {
+    background-color: var(--primaryColorBlue);
+    color: white;
+}
+
+.seccionPreguntas {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.seccionPreguntas .preguntas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+.seccionPreguntas hr {
+    height: 1px;
+    width: 50%;
+    background-color: var(--NeutralDarkBlue);
+}
+
+footer {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+
+footer .seccionFooterUno {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    width: 100%;
+    background-color: var(--primaryColorBlue);
+    padding: 6% 0px 6% 0px;
+}
+
+.seccionFooterUno h1, .seccionFooterUno span, .seccionFooterDos span {
+    color: white;
+}
+
+.seccionFooterUno div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.seccionFooterUno div input {
+    border: none;
+    width: 200px;
+    border-radius: 5px;
+    padding-left: 5px;
+    outline: none;
+}
+
+.seccionFooterUno div input::placeholder {
+    font-size: 16px;
+}
+
+.seccionFooterUno div button {
+    background-color: var(--primaryColorRed);
+    color: white;
+    box-shadow: 5px 5px 5px var(--NeutralDarkBlue);
+}
+
+.seccionFooterUno div button:hover {
+    background-color: hsl(0, 65%, 56%);
+    color: white;
+}
+
+.seccionFooterUno div button:active {
+    background-color: hsl(0, 49%, 47%);
+    box-shadow: 2px 2px 5px gray;
+}
+
+footer .seccionFooterDos {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--NeutralDarkBlue);
+    width: 90%;
+    padding: 3% 5% 3% 5%
+}
+
+.seccionFooterDos .seccionFooterDosUno, .seccionFooterDos .seccionFooterDosDos {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 35px;
+}
 
 /* Añadiendo media querys */
 @media screen and (max-width:760px) {
     .seccionUno {
         flex-direction: column-reverse;
     }
+
     .seccionUnoIzquierda, .seccionUnoDerecha, .seccionDosDerecha, .seccionDosIzquierda {
         margin: 0;
         width: 100%;
@@ -279,8 +414,17 @@ main {
     .minisecciones {
         width: 100%;
     }
-
-    .seccionDosBody{
+    
+    .seccionDosIzquierda img {
+        width: 60%;
+        justify-self: center;
+        margin: auto;
+    }
+    .gradientseccioDos{
+        width: 50%;
+        left: 50%;
+    }
+    .seccionDosBody {
         flex-direction: column;
     }
 }
@@ -288,5 +432,9 @@ main {
 @media screen and (max-width:500px) {
     header .headerContent {
         display: none;
+    }
+
+    .hamburger img{
+        display: block;
     }
 }

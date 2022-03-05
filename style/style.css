@@ -75,34 +75,50 @@ main {
     flex-direction: row;
     justify-content: space-around;
     align-content: center;
+    margin-bottom: 5%;
     gap: 10px;
 }
 
 .seccionUnoIzquierda {
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-items: center;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 5%;
+    width: 90%;    
+    margin-left: 10%;
 }
 
 .seccionUnoIzquierda p {
     font-size: 16px;
-    align-self: flex-start;
-    justify-self: start;
+    align-self: start;
+    justify-self: center;
+    word-spacing: 1px;
+ 
 }
 
 .seccionUnoIzquierda h1 {
     font-size: 1.8rem;
-    align-self: center;
+    align-self: flex-start;
     text-align: center;
+}
+
+.seccionUnoIzBotones {
+    display: flex;
+    gap: 10px;
+    flex-flow: row wrap;
+    align-self: flex-start;
+    justify-self:center;
+    justify-content: center;
+    align-items: center;
+ 
 }
 
 .seccionUnoDerecha {
     display: flex;
     align-items: center;
     position: relative;
-
 }
 
 .seccionUnoDerecha img {
@@ -111,18 +127,14 @@ main {
     z-index: 20;
 }
 
-.seccionUnoIzBotones {
-    align-self: center;
-}
-
-.seccionUnoIzBotones .botonChrome{
-    background-color: var(--NeutralGrayBlue);
+.seccionUnoIzBotones .botonChrome {
+    background-color: var(--primaryColorBlue);
+    color: white;
 }
 
 .gradient {
     width: 65%;
-    height: 75%;
-    display: inherit;
+    height: 220px;
     position: absolute;
     background-color: var(--primaryColorBlue);
     border-radius: 80px 0px 0px 80px;
@@ -134,15 +146,25 @@ main {
     .seccionUno {
         flex-direction: column-reverse;
     }
-    .seccionUnoIzquierda{
-        margin-bottom: 0%;
-        margin-left: 0%;
-    }
-    .seccionUnoIzquierda p {
-        font-size: 14px;
-        align-self: center;
-        justify-self: center;
 
+    .seccionUnoIzquierda{
+        margin: 0;
+        width: 100%;
+    }
+
+    .seccionUnoIzquierda p, h1,.seccionUnoIzBotones{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .seccionUnoIzquierda p {
+        font-size: 18px;
+        text-align: center;
+
+    }
+    .seccionUnoIzquierda h1{
+        text-align: center;
     }
 
     .seccionUnoDerecha img {

@@ -8,6 +8,7 @@
     font-weight: Extra-light 200;
 }
 
+/* variables */
 :root {
     --primaryColorBlue: hsl(231, 69%, 60%);
     --primartColorRed: hsl(0, 94%, 66%);
@@ -15,6 +16,44 @@
     --NeutralDarkBlue: hsl(229, 31%, 21%);
 }
 
+/* Estilos predeterminados para ponerle a ese tipo de objeto */
+
+.seccion{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    margin-bottom: 5%;
+    gap: 10px;
+}
+
+.buttonDefault {
+    padding: 0% 20px 0% 20px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+
+.parrafos {
+    font-size: 16px;
+    word-spacing: 1px;
+}
+
+.titulos {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.gradient{
+    height: 220px;
+    position: absolute;
+    background-color: var(--primaryColorBlue);
+}
+
+/* Estilos del header */
 header {
     margin-top: 20px;
     width: 100%;
@@ -44,15 +83,6 @@ header .headerContent {
 
 }
 
-.buttonDefault {
-    padding: 0% 20px 0% 20px;
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    transition: all 0.5s;
-}
-
-
 
 .headerContent button:hover {
     background-color: hsl(0, 65%, 56%);
@@ -70,15 +100,6 @@ main {
     margin-top: 5%;
 }
 
-.seccionUno {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: center;
-    margin-bottom: 5%;
-    gap: 10px;
-}
-
 .seccionUnoIzquierda {
     display: flex;
     flex-flow: column nowrap;
@@ -86,22 +107,17 @@ main {
     justify-items: center;
     justify-content: center;
     gap: 10px;
-    width: 90%;    
+    width: 40%;
     margin-left: 10%;
 }
 
 .seccionUnoIzquierda p {
-    font-size: 16px;
     align-self: start;
     justify-self: center;
-    word-spacing: 1px;
- 
 }
 
 .seccionUnoIzquierda h1 {
-    font-size: 1.8rem;
     align-self: flex-start;
-    text-align: center;
 }
 
 .seccionUnoIzBotones {
@@ -109,16 +125,10 @@ main {
     gap: 10px;
     flex-flow: row wrap;
     align-self: flex-start;
-    justify-self:center;
+    justify-self: center;
     justify-content: center;
     align-items: center;
- 
-}
 
-.seccionUnoDerecha {
-    display: flex;
-    align-items: center;
-    position: relative;
 }
 
 .seccionUnoDerecha img {
@@ -127,32 +137,117 @@ main {
     z-index: 20;
 }
 
+.seccionUnoDerecha {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width:50%;
+}
+
 .seccionUnoIzBotones .botonChrome {
     background-color: var(--primaryColorBlue);
     color: white;
 }
 
-.gradient {
+.gradientseccionUno {
     width: 65%;
-    height: 220px;
-    position: absolute;
-    background-color: var(--primaryColorBlue);
     border-radius: 80px 0px 0px 80px;
     left: 35%;
     top: 25%;
 }
 
+.minisecciones {
+    width: 50%;
+    margin: 0px auto 5% auto;
+}
+
+.features p {
+    text-align: center;
+}
+
+.seccionDos {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.seccionDos .seccionDosHeader {
+    display: flex;
+    width: auto;
+    margin: 0px auto 5% auto;
+    justify-content: center;
+}
+
+.seccionDosHeader span {
+    border-bottom: 1px black solid;
+    padding: 20px;
+}
+
+.seccionDosBody{
+    display: flex;
+}
+
+.gradientseccioDos{
+    width: 100%;
+    border-radius: 0px 80px 80px 0px;
+    top: 30%;
+}
+
+.seccionDosIzquierda{
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: end;
+    justify-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 50%;
+}
+    
+.seccionDosIzquierda img{
+    width: 350px;
+    align-items: end;
+    z-index: 20;
+}
+
+.seccionDosDerecha {
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 40%;
+    margin-left: 10%;
+}
+
+.seccionDosDerecha p {
+    align-self: start;
+    justify-self: center;
+}
+
+.seccionDosDerecha h1 {
+    align-self: flex-start;
+}
+
+
+
+
+
+
+
+/* Añadiendo media querys */
 @media screen and (max-width:760px) {
     .seccionUno {
         flex-direction: column-reverse;
     }
-
-    .seccionUnoIzquierda{
+    .seccionUnoIzquierda, .seccionUnoDerecha, .seccionDosDerecha, .seccionDosIzquierda {
         margin: 0;
         width: 100%;
     }
 
-    .seccionUnoIzquierda p, h1,.seccionUnoIzBotones{
+    .seccionUnoIzquierda p, h1, .seccionUnoIzBotones {
         justify-content: center;
         align-items: center;
         width: 100%;
@@ -163,7 +258,8 @@ main {
         text-align: center;
 
     }
-    .seccionUnoIzquierda h1{
+
+    .seccionUnoIzquierda h1 {
         text-align: center;
     }
 
@@ -173,13 +269,20 @@ main {
         margin: auto;
     }
 
-    .gradient {
+    .gradientseccionUno {
         width: 60%;
         height: 75%;
         left: 40%;
         top: 25%;
     }
 
+    .minisecciones {
+        width: 100%;
+    }
+
+    .seccionDosBody{
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width:500px) {

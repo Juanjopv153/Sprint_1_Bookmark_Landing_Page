@@ -7,6 +7,7 @@
     font-size: 18px;
     font-weight: Extra-light 200;
     scroll-behavior: smooth;
+    transition: all 0.5s;
 }
 
 /* variables */
@@ -36,7 +37,6 @@
     border: none;
     font-size: 16px;
     font-weight: bold;
-    transition: all 0.5s;
     cursor: pointer;
     border-radius: 5px;
 }
@@ -59,9 +59,10 @@
 }
 
 /* Estilos del header */
-body{
+body {
     position: relative;
 }
+
 header {
     display: flex;
     flex-direction: column;
@@ -352,7 +353,6 @@ main {
     margin: 5%;
     position: absolute;
     transform: translateY(-100%);
-    transition: all 0.5s;
     background-color: white;
 }
 
@@ -610,13 +610,15 @@ footer .seccionFooterDos {
         flex-direction: column;
         justify-content: start;
         align-items: center;
-        gap: 10px;
+        gap: 20px;
         width: 90%;
-        height: auto;
+        min-height: 15%;
         background-color: var(--NeutralDarkBlue);
         padding: 5% 5% 5% 5%;
         position: absolute;
-        z-index: 1000;
+        z-index: 100;
+        transform: translateY(-101%);
+        transition: all 0.3s;
     }
 
     .headerNav {
@@ -626,7 +628,8 @@ footer .seccionFooterDos {
         width: 90%;
 
     }
-    .headerLogo{
+
+    .headerLogo {
         filter: invert(100%) sepia(0%) saturate(7495%) hue-rotate(174deg) brightness(103%) contrast(104%);
     }
 
@@ -644,9 +647,11 @@ footer .seccionFooterDos {
 
     }
 
-    .navHeader .images{
+    .navHeader .images {
         justify-self: end;
-        align-self:end;
+        align-self: center;
+        display: flex;
+        gap: 20px;
     }
 
 }

@@ -12,16 +12,38 @@
 
 <body>
     <header>
-        <img src="./images/logo-bookmark.svg" alt="" class="logo">
-        <div>
-            <div class="headerContent">
-                <span>Features</span>
-                <span>Pricing</span>
-                <span>Contact</span>
-                <button class="buttonDefault">Login</button>
+        <div class="header">
+            <img src="./images/logo-bookmark.svg" alt="" class="logo">
+            <div>
+                <div class="headerContent">
+                    <a href="#features"> <span> Features</span></a>
+                    <a href="#quest"> <span> Pricing</span></a>
+                    <a href="#Contact"> <span> Contact</span></a>
+                    <a href="#Contact"> <button class="buttonDefault">Login</button></a>
+                </div>
+                <div class="hamburger">
+                    <img src="./images/icon-hamburger.svg" alt="">
+                </div>
             </div>
-            <div class="hamburger">
-                <img src="./images/icon-hamburger.svg" alt="">
+        </div>
+        <div class="navHeader">
+            <div class="headerNav">
+                <img src="./images/logo-bookmark.svg" alt="" class="logo headerLogo">
+                <img src="./images/icon-close.svg" alt="">
+            </div>
+            <hr>
+            <span></span><a href="#features" class="titulos"> Features</a></span>
+            <hr>
+            <span><a href="#quest" class="titulos"> Pricing</a></span>
+            <hr>
+            <span><a href="#Contact" class="titulos"> Contact</a></span>
+            <hr>
+            <button class="buttonDefault"><a href="#Contact" class="titulos">Login</a></button>
+            <div class="images">
+                <a href="https://www.facebook.com/" target="_blank"><img src="./images/icon-facebook.svg" alt=""
+                        class="imgFace"></a>
+                <a href="https://twitter.com/ShitpostBot5000/media?t=0zCLgkaQTIgXYp9qRyXBKw&s=08" target="_blank"><img
+                        src="./images/icon-twitter.svg" alt="" class="imgTwit"></a>
             </div>
         </div>
     </header>
@@ -35,8 +57,8 @@
                 </p>
 
                 <div class="seccionUnoIzBotones">
-                    <button class="buttonDefault botonChrome">Get it on Chrome</button>
-                    <button class="buttonDefault">Get it on Firefox</button>
+                    <a href="#cardChrome"> <button class="buttonDefault botonChrome">Get it on Chrome</button></a>
+                    <a href="#cardFirefox"> <button class="buttonDefault btnGray">Get it on Firefox</button></a>
                 </div>
             </div>
             <div class="seccionUnoDerecha">
@@ -44,7 +66,7 @@
                 <div class="gradient gradientseccionUno"></div>
             </div>
         </div>
-        <div class="features minisecciones">
+        <div class="features minisecciones" id="features">
             <h1 class="titulos">Features</h1>
             <p class="parrafos">
                 Our aim is to make it quick and easy for you to
@@ -55,16 +77,16 @@
         <div class="seccionDos">
             <div class="seccionDosHeader">
                 <div>
-                    <span>Simple Bookmarking</span>
+                    <span id="simple">Simple Bookmarking</span>
                 </div>
                 <div>
-                    <span>Speedy Searching</span>
+                    <span id="speedy">Speedy Searching</span>
                 </div>
                 <div>
-                    <span>Easy Sharing</span>
+                    <span id="easy">Easy Sharing</span>
                 </div>
             </div>
-            <div class="seccion seccionDosBody">
+            <div class="seccion seccionDosBody" id="main">
                 <div class="seccionDosIzquierda">
                     <img src="./images/illustration-features-tab-1.svg" alt="">
                     <div class="gradient gradientseccioDos"></div>
@@ -91,14 +113,14 @@
             </p>
         </div>
         <div class="seccionExtensiones">
-            <div class="card cardChrome">
+            <div class="card cardChrome" id="cardChrome">
                 <img src="./images/logo-chrome.svg" alt="">
                 <h1>Add to Chrome</h1>
                 <span>Minimum version 62</span>
                 <img src="./images/bg-dots.svg" class="dotsImage" alt="">
                 <button class="buttonDefault btnExtension">Add & Install Extension</button>
             </div>
-            <div class="card cardFirefox">
+            <div class="card cardFirefox" id="cardFirefox">
                 <img src="./images/logo-firefox.svg" alt="">
                 <h1>Add to Firefox</h1>
                 <span>Minimum version 55</span>
@@ -114,47 +136,71 @@
             </div>
         </div>
         <div class="minisecciones">
-            <h1 class="titulos">Frequently Asked Questios</h1>
+            <h1 class="titulos" id="quest">Frequently Asked Questios</h1>
             <p class="parrafos">
                 Here are some of our FAQs. If you have any other questions you'd
                 like answered please feel free to email us.
             </p>
         </div>
         <div class="seccionPreguntas">
-            <div class="preguntas">
-                <span>What is Bookmark?</span>
-                <img src="./images/icon-arrow.svg" alt="">
-
-
+            <div class="paginaA">
+                <div class="preguntas" id="XD">
+                    <span>What is Bookmark?</span>
+                    <img src="./images/icon-arrow.svg" id="icon1" alt="">
+                </div>
+                <hr>
+                <div class="overflow" id="over1">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    xercitationem deserunt voluptas autem est adipisci assumenda
+                    cumque. Nostrum, animi similique. Animi numquam dolores iste.
+                    Sunt, earum! Veniam modi ex debitis itaque!
+                </div>
             </div>
-            <hr>
-
-            <div class="preguntas">
-                <span>How can i request a new browser?</span>
-                <img src="./images/icon-arrow.svg" alt="">
-
+            <div class="paginaA">
+                <div class="preguntas" id="XD">
+                    <span>How can i request a new browser?</span>
+                    <img src="./images/icon-arrow.svg" id="icon1" alt="">
+                </div>
+                <hr>
+                <div class="overflow" id="over1">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    xercitationem deserunt voluptas autem est adipisci assumenda
+                    cumque. Nostrum, animi similique. Animi numquam dolores iste.
+                    Sunt, earum! Veniam modi ex debitis itaque!
+                </div>
             </div>
-            <hr>
-
-            <div class="preguntas">
-                <span>Is there a mobile app?</span>
-                <img src="./images/icon-arrow.svg" alt="">
-
+            <div class="paginaA">
+                <div class="preguntas" id="XD">
+                    <span>Is there a mobile app?</span>
+                    <img src="./images/icon-arrow.svg" id="icon1" alt="">
+                </div>
+                <hr>
+                <div class="overflow" id="over1">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    xercitationem deserunt voluptas autem est adipisci assumenda
+                    cumque. Nostrum, animi similique. Animi numquam dolores iste.
+                    Sunt, earum! Veniam modi ex debitis itaque!
+                </div>
             </div>
-            <hr>
-
-            <div class="preguntas">
-                <span>What about a mobile app?</span>
-                <img src="./images/icon-arrow.svg" alt="">
-
+            <div class="paginaA">
+                <div class="preguntas" id="XD">
+                    <span>What about a mobile app?</span>
+                    <img src="./images/icon-arrow.svg" id="icon1" alt="">
+                </div>
+                <hr>
+                <div class="overflow" id="over1">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    xercitationem deserunt voluptas autem est adipisci assumenda
+                    cumque. Nostrum, animi similique. Animi numquam dolores iste.
+                    Sunt, earum! Veniam modi ex debitis itaque!
+                </div>
             </div>
-            <hr>
-            <button class="buttonDefault btnExtension">More info</button>
+            <div><button class="buttonDefault btnExtension">More info</button></div>
         </div>
     </main>
     <footer>
         <div class="seccionFooterUno">
-            <span class="parrafos">35.000+ ALREADY JOINED</span>
+            <span class="parrafos" id="Contact">35.000+ ALREADY JOINED</span>
             <h1 class="titulos">Stay up-to-date with what we're doing</h1>
             <div>
                 <input type="text" placeholder="Enter your email adress">
@@ -164,16 +210,19 @@
         <div class="seccionFooterDos">
             <div class="seccionFooterDosUno">
                 <img src="./images/logo-bookmark.svg" class="logo" alt="">
-                <span>Features</span>
-                <span>Pricing</span>
-                <span>Contact</span>
+                <a href="#features"> <span> Features</span></a>
+                <a href="#quest"> <span> Pricing</span></a>
+                <a href="#Contact"> <span> Contact</span></a>
             </div>
             <div class="seccionFooterDosDos">
-                <img src="./images/icon-facebook.svg" alt="">
-                <img src="./images/icon-twitter.svg" alt="">
+                <a href="https://www.facebook.com/" target="_blank"><img src="./images/icon-facebook.svg" alt=""
+                        class="imgFace"></a>
+                <a href="https://twitter.com/ShitpostBot5000/media?t=0zCLgkaQTIgXYp9qRyXBKw&s=08" target="_blank"><img
+                        src="./images/icon-twitter.svg" alt="" class="imgTwit"></a>
             </div>
         </div>
     </footer>
 </body>
+<script src="script/script.js" type="module"></script>
 
 </html>

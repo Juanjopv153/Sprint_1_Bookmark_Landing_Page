@@ -6,6 +6,7 @@
     font-family: 'Cairo', sans-serif;
     font-size: 18px;
     font-weight: Extra-light 200;
+    scroll-behavior: smooth;
 }
 
 /* variables */
@@ -58,7 +59,15 @@
 }
 
 /* Estilos del header */
+body{
+    position: relative;
+}
 header {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
     margin-top: 20px;
     width: 100%;
     display: flex;
@@ -70,9 +79,10 @@ header {
 .hamburger img {
     width: 30px;
     display: none;
+    cursor: pointer;
 }
 
-header .headerContent {
+.header .headerContent {
     display: flex;
     gap: 20px;
     align-self: start;
@@ -80,23 +90,33 @@ header .headerContent {
 
 }
 
-.headerContent button {
+a:link, a:active, a:visited, a {
+    color: black;
+    text-decoration: none;
+
+}
+
+.header .headerContent span {
+    cursor: pointer;
+}
+
+.headerContent button, .seccionFooterUno div button {
     background-color: var(--primaryColorRed);
     color: white;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px gray;
+    border: 2px solid var(--primaryColorRed);
 
 }
 
 
-.headerContent button:hover {
+.headerContent button:hover, .seccionFooterUno div button:hover {
     background-color: hsl(0, 65%, 56%);
     color: white;
 }
 
-.headerContent button:active {
-    background-color: hsl(0, 49%, 47%);
-    box-shadow: 2px 2px 5px gray;
+.headerContent button:active, .seccionFooterUno div button:active {
+    background-color: white;
+    color: var(--primaryColorRed);
+
 }
 
 /* Estilos de main */
@@ -119,6 +139,11 @@ main {
     align-self: start;
     justify-self: center;
 }
+
+.navHeader {
+    display: none;
+}
+
 
 .seccionUnoIzquierda h1 {
     align-self: flex-start;
@@ -149,10 +174,6 @@ main {
     z-index: 20;
 }
 
-.seccionUnoIzBotones .botonChrome {
-    background-color: var(--primaryColorBlue);
-    color: white;
-}
 
 .gradientseccionUno {
     width: 65%;
@@ -213,6 +234,8 @@ main {
     width: 50%;
 }
 
+
+
 .seccionDosIzquierda img {
     width: 350px;
     align-items: end;
@@ -248,6 +271,15 @@ main {
     height: 500px;
 }
 
+#simple {
+    border-bottom: 2px solid var(--primaryColorRed);
+}
+
+.seccionDosHeader div span:hover, .seccionFooterDosUno span:hover, .header .headerContent span:hover {
+    color: var(--primaryColorRed);
+    transition: all 0.3s;
+}
+
 .seccionExtensiones .card {
     display: flex;
     flex-flow: column;
@@ -257,6 +289,18 @@ main {
     padding: 5% 2% 2% 2%;
     width: 25%;
     box-shadow: -8px 8px 8px var(--NeutralGrayBlue);
+}
+
+.seccionPreguntas .preguntas img, .imgFace, .imgTwit {
+    cursor: pointer;
+}
+
+.seccionPreguntas .preguntas img:hover {
+    filter: hue-rotate(120deg);
+}
+
+.imgFace:hover, .imgTwit:hover {
+    filter: invert(50%) sepia(83%) saturate(3842%) hue-rotate(332deg) brightness(102%) contrast(97%);
 }
 
 .dotsImage {
@@ -275,11 +319,6 @@ main {
     align-self: flex-end;
 }
 
-.btnExtension {
-    background-color: var(--primaryColorBlue);
-    color: white;
-}
-
 .seccionPreguntas {
     display: flex;
     flex-flow: column;
@@ -288,17 +327,40 @@ main {
     gap: 15px;
 }
 
+.seccionPreguntas .paginaA {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
 .seccionPreguntas .preguntas {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
+    width: 100%;
+    background-color: white;
+    z-index: 20;
 }
 
-.seccionPreguntas hr {
+.seccionPreguntas .paginaA .overflow {
+    margin: 5%;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: all 0.5s;
+    background-color: white;
+}
+
+.seccionPreguntas .paginaA hr {
     height: 1px;
-    width: 50%;
+    width: 100%;
     background-color: var(--NeutralDarkBlue);
+    z-index: 10;
 }
 
 footer {
@@ -322,6 +384,10 @@ footer .seccionFooterUno {
     color: white;
 }
 
+.seccionFooterDos span {
+    cursor: pointer;
+}
+
 .seccionFooterUno div {
     display: flex;
     align-items: center;
@@ -341,22 +407,6 @@ footer .seccionFooterUno {
     font-size: 16px;
 }
 
-.seccionFooterUno div button {
-    background-color: var(--primaryColorRed);
-    color: white;
-    box-shadow: 5px 5px 5px var(--NeutralDarkBlue);
-}
-
-.seccionFooterUno div button:hover {
-    background-color: hsl(0, 65%, 56%);
-    color: white;
-}
-
-.seccionFooterUno div button:active {
-    background-color: hsl(0, 49%, 47%);
-    box-shadow: 2px 2px 5px gray;
-}
-
 footer .seccionFooterDos {
     display: flex;
     flex-flow: row nowrap;
@@ -371,6 +421,38 @@ footer .seccionFooterDos {
     display: flex;
     flex-flow: row nowrap;
     gap: 35px;
+}
+
+.seccionUnoIzBotones .botonChrome, .btnExtension {
+    background-color: var(--primaryColorBlue);
+    color: white;
+    border: 1px solid var(--primaryColorBlue);
+
+}
+
+.seccionUnoIzBotones .botonChrome:hover, .btnExtension:hover {
+    background-color: hsl(231, 49%, 52%);
+    transition: all 0.3s;
+}
+
+.seccionUnoIzBotones .botonChrome:active, .btnExtension:active {
+    background-color: white;
+    transition: all 0.3s;
+    color: var(--primaryColorBlue);
+}
+
+.btnGray {
+    background-color: var(--NeutralGrayBlue);
+    border: 2px solid var(--NeutralGrayBlue);
+}
+
+.btnGray:hover {
+    background-color: hsl(228, 6%, 50%);
+}
+
+.btnGray:active {
+    background-color: white;
+    color: var(--NeutralGrayBlue);
 }
 
 /* Añadiendo media querys */
@@ -465,11 +547,11 @@ footer .seccionFooterDos {
         margin-bottom: 5%;
     }
 
-    .seccionExtensiones .card{
+    .seccionExtensiones .card {
         justify-content: center;
         align-items: center;
         text-align: center;
-        width: 50%;
+        width: 70%;
     }
 
     .seccionExtensiones .cardChrome {
@@ -484,35 +566,87 @@ footer .seccionFooterDos {
         align-self: center;
     }
 
-    .seccionPreguntas .preguntas {
+    .seccionPreguntas .paginaA {
         width: 80%;
+        margin: autoss;
     }
-    .seccionPreguntas hr{
-        width: 80%;
+
+    .seccionPreguntas .paginaA .preguntas {
+        width: 100%;
     }
- 
-    footer .seccionFooterDos{
+
+    .seccionPreguntas .paginaA hr {
+        width: 100%;
+    }
+
+    footer .seccionFooterDos {
         flex-direction: column;
-        gap: 30px;
+        gap: 15px;
     }
-    .seccionFooterDos .seccionFooterDosUno{
+
+    .seccionFooterDos .seccionFooterDosUno {
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
-    .seccionFooterUno div{
+    .seccionFooterUno div {
         flex-direction: column;
     }
 }
 
-
 @media screen and (max-width:500px) {
-    header .headerContent {
+    .header .headerContent {
         display: none;
     }
 
-    .hamburger img{
+    .hamburger img {
         display: block;
     }
+
+
+    body .navHeader {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        gap: 10px;
+        width: 90%;
+        height: auto;
+        background-color: var(--NeutralDarkBlue);
+        padding: 5% 5% 5% 5%;
+        position: absolute;
+        z-index: 1000;
+    }
+
+    .headerNav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+
+    }
+    .headerLogo{
+        filter: invert(100%) sepia(0%) saturate(7495%) hue-rotate(174deg) brightness(103%) contrast(104%);
+    }
+
+    .navHeader hr, .navHeader a {
+        width: 90%;
+        color: white;
+    }
+
+    .navHeader button {
+        width: 90%;
+        justify-self: center;
+        align-self: center;
+        background-color: transparent;
+        border: 2px solid white;
+
+    }
+
+    .navHeader .images{
+        justify-self: end;
+        align-self:end;
+    }
+
 }
